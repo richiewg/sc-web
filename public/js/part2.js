@@ -107,6 +107,8 @@ $(document).on('ready', function() {
 	
 	$("#dashboardLink").click(function(){
 		if(user.username) {
+			$('#spinner2').show();
+			$('#openTrades').hide();
 			ws.send(JSON.stringify({type: "getAllBatches", v: 2}));
 		}
 	});
@@ -186,6 +188,8 @@ function connect_to_server(){
 		$("#errorNotificationPanel").fadeOut();
 		ws.send(JSON.stringify({type: "chainstats", v:2}));
 		if(user.username && bag.session.user_role && bag.session.user_role.toUpperCase() === "certifier".toUpperCase()) {
+			$('#spinner2').show();
+			$('#openTrades').hide();
 			ws.send(JSON.stringify({type: "getAllBatches", v: 2}));
 		}
 
@@ -203,6 +207,8 @@ function connect_to_server(){
 			
 			if(data.msg === 'allBatches'){
 				build_Batches(data.batches, null);
+				$('#spinner2').hide();
+				$('#openTrades').show();
 			}
 			else if(data.msg === 'batch'){
 				console.log(data);
@@ -324,6 +330,8 @@ function connect_to_server(){
 			}
 			else if(data.msg === 'reset'){						
 				if(user.username && bag.session.user_role && bag.session.user_role.toUpperCase() === "certifier".toUpperCase()) {
+					$('#spinner2').show();
+					$('#openTrades').hide();
 					ws.send(JSON.stringify({type: "getAllBatches", v: 2}));
 				}
 			}
