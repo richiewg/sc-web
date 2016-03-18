@@ -1,0 +1,35 @@
+#newBatchPanel(hidden).panel
+	h1 Enter Batch Details
+	hr
+
+	#innerWrap
+		img(src="/imgs/fish.png" style="float:left;margin-right: 60px; border-radius: 30px; width: 38%;box-shadow: 10px 10px 5px #888888;")
+		
+		form(action="/newBatch" method="POST")#newBatchform
+			legend 
+				input(type="text" name="BatchId" placeholder="Batch Id" disabled)
+			legend 
+				select(name="Type")
+					option Salmon
+					option Barramundi
+					option Dory
+					option Tuna
+					option Ray
+				span.hint 
+			legend 
+				input(type="text" name="Date" placeholder="Date" disabled)
+			legend 
+				input(type="text" name="Location" placeholder="Location" value="Sydney Fish Market" disabled)
+			legend 
+				input(type="number" name="Quantity" placeholder="Items Quantity" min="1")
+			
+			legend
+				button(type="button" style="margin:10px 10px 5px 10px")#generate
+					span.fa.fa-cog &nbsp;&nbsp;
+					span GENERATE
+
+			legend
+				button(type="button" style="margin:10px 10px 5px 10px" disabled)#submit
+					span.fa.fa-plus &nbsp;&nbsp;
+					span SUBMIT
+				

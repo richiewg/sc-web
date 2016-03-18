@@ -1,0 +1,34 @@
+#dashboardPanel(hidden).panel
+	h1 Batch Tracker
+	hr
+
+	#dashboardModal.modalDialog(style="margin-top: 200px")
+			div
+				.modal-header
+					h5 Filter Transactions
+					hr
+				.modal-content
+					form#dashboardFilter
+						input#dashboard_batchId.dashboard-filter(type="text" name="batchId" placeholder="Batch Id")
+						br
+						br
+						a.filter-button(href="#close" title="Close" ) Close
+						
+						
+	#openTrades
+		
+		br
+		a.filter-button(href="#dashboardModal") Filter Transactions
+		br
+		br
+		table#dashboardTable.tablesorter(style="width:30%;float:left")
+			thead
+				tr 
+					th BATCH ID
+			tbody#dashboardBody
+
+		table#batchDetailsTable.tablesorter(style="width:64%;float:right")
+			thead
+				tr 
+					th#bDetHeader(colspan="2" style="font-size: 12px;")
+			tbody#batchDetailsBody
