@@ -206,6 +206,7 @@ function connect_to_server(){
 			var data = JSON.parse(msg.data);
 			
 			if(data.msg === 'allBatches'){
+				console.log("---- ", data);
 				build_Batches(data.batches, null);
 				$('#spinner2').hide();
 				$('#openTrades').show();

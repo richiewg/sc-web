@@ -37,7 +37,7 @@ module.exports.process_msg = function(ws, data, owner){
 			console.log('Get Batch error', e);
 		}
 		else{
-			sendMsg({msg: 'batch', batch: batch});
+			sendMsg({msg: 'batch', batch: JSON.parse(batch)});
 		}
 	}
 	
@@ -46,7 +46,7 @@ module.exports.process_msg = function(ws, data, owner){
 			console.log('Get All Batches error', e);
 		}
 		else{
-			sendMsg({msg: 'allBatches', batches: allBatches.batches});
+			sendMsg({msg: 'allBatches', batches: JSON.parse(allBatches).batches});
 		}
 	}
 	
