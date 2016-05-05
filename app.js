@@ -447,7 +447,7 @@ var options = 	{
 					network:{
 						peers: peers,
 						users: users,
-                  options: {quiet: true, tls:false, maxRetry: 1}
+                  options: {quiet: true, tls:false, maxRetry: 5}
 					},
 					chaincode:{
 						zip_url: 'https://github.com/mcenatie/sc-chaincode/archive/master.zip',
