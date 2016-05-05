@@ -455,7 +455,7 @@ var options = 	{
 						git_url: 'https://github.com/mcenatie/sc-chaincode',			//GO git http url
 					
 						//hashed cc name from prev deployment
-						//deployed_name: 'mycc'
+						deployed_name: null
 						//deployed_name: '4f1bf6581ebe31326cf8ae669859225f1ef65ec6b718142f1e30a4dc9c9dbd51c3ddcc2ff070542c8c3d38e82d81c7690da5db7a0fbc3383874787816e2a4017'
 					}
 				};
