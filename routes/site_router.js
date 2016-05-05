@@ -47,7 +47,7 @@ router.route("/dashboard").get(function(req, res){
 
 router.route("/getBatch").post(function(req, res){
 
-	chaincode.query(['getBatch', req.body.batchId], function (e, batch){
+	chaincode.query.getBatch([req.body.batchId], function (e, batch){
 		if(e != null){
 			console.log('Get Batch error', e);
 			res.send(e);
@@ -60,7 +60,7 @@ router.route("/getBatch").post(function(req, res){
 
 router.route("/claimBatch").post(function(req, res){
 
-	chaincode.claimBatch([req.body.batchId,req.body.user,req.body.date,req.body.location], function (e, resMsg){
+	chaincode.invoke.claimBatch([req.body.batchId,req.body.user,req.body.date,req.body.location], function (e, resMsg){
 		if(e != null){
 			console.log('Claim Batch error', e);
 			res.send(e);
@@ -73,7 +73,7 @@ router.route("/claimBatch").post(function(req, res){
 
 router.route("/getAllBatches").post(function(req, res){
 
-	chaincode.query(['getAllBatches',req.body.user], function (e, resMsg){
+	chaincode.query.getAllBatches([req.body.user], function (e, resMsg){
 		if(e != null){
 			console.log('Get All Batch error', e);
 			//res.send(e);
@@ -86,7 +86,7 @@ router.route("/getAllBatches").post(function(req, res){
 
 router.route("/getAllBatchesDetails").post(function(req, res){
 
-	chaincode.query(['getAllBatchesDetails',req.body.user], function (e, resMsg){
+	chaincode.query.getAllBatchesDetails([req.body.user], function (e, resMsg){
 		if(e != null){
 			console.log('Get All Batch Details error', e);
 			//res.send(e);
@@ -99,7 +99,7 @@ router.route("/getAllBatchesDetails").post(function(req, res){
 
 router.route("/getNbItems").post(function(req, res){
 
-	chaincode.query(['getNbItems',req.body.user], function (e, resMsg){
+	chaincode.query.getNbItems([req.body.user], function (e, resMsg){
 		if(e != null){
 			console.log('Get All Batch error', e);
 			//res.send(e);
@@ -112,7 +112,7 @@ router.route("/getNbItems").post(function(req, res){
 
 router.route("/transferBatch").post(function(req, res){
 
-	chaincode.transferBatch([req.body.batchId,req.body.user,req.body.date,req.body.location,req.body.newOwner,req.body.signature], function (e, resMsg){
+	chaincode.invoke.transferBatch([req.body.batchId,req.body.user,req.body.date,req.body.location,req.body.newOwner,req.body.signature], function (e, resMsg){
 		if(e != null){
 			console.log('Transfer Batch error', e);
 			//res.send(e);
@@ -125,7 +125,7 @@ router.route("/transferBatch").post(function(req, res){
 
 router.route("/sellItem").post(function(req, res){
 	//console.log([req.body.batchId,req.body.user,req.body.date,req.body.location,(req.body.quantity).toString(),req.body.newOwner]);
-	chaincode.sellBatchItem([req.body.batchId,req.body.user,req.body.date,req.body.location,(req.body.quantity).toString(),req.body.newOwner], function (e, resMsg){
+	chaincode.invoke.sellBatchItem([req.body.batchId,req.body.user,req.body.date,req.body.location,(req.body.quantity).toString(),req.body.newOwner], function (e, resMsg){
 		if(e != null){
 			console.log('Sell Item error', e);
 			//res.send(e);
@@ -137,7 +137,7 @@ router.route("/sellItem").post(function(req, res){
 });
 
 router.route("/updateBatchQuality").post(function(req, res){
-	chaincode.updateBatchQuality([req.body.user,req.body.date,req.body.location,req.body.msg], function (e, resMsg){
+	chaincode.invoke.updateBatchQuality([req.body.user,req.body.date,req.body.location,req.body.msg], function (e, resMsg){
 		if(e != null){
 			console.log('Update Batch Quality error', e);
 			//res.send(e);

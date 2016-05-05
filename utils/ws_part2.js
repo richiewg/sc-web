@@ -20,16 +20,16 @@ module.exports.process_msg = function(ws, data, owner){
 	else if(data.type == 'createBatch'){
 		console.log('Create Batch ', data, owner);
 		if(data.batch){
-			chaincode.createBatch([data.batch.id,data.batch.bType, owner, data.batch.quantity, data.batch.vDate, data.batch.location], cb_invoked_createbatch);				//create a new paper
+			chaincode.invoke.createBatch([data.batch.id,data.batch.bType, owner, data.batch.quantity, data.batch.vDate, data.batch.location], cb_invoked_createbatch);				//create a new paper
 		}
 	}
 	else if(data.type == 'getBatch'){
 		console.log('Get Batch', data.batchId);
-		chaincode.query(['getBatch', data.batchId], cb_got_batch);
+		chaincode.query.getBatch([data.batchId], cb_got_batch);
 	}
 	else if(data.type == 'getAllBatches'){
 		console.log('Get All Batches', owner);
-		chaincode.query(['getAllBatches', owner], cb_got_allbatches);
+		chaincode.query.getAllBatches([owner], cb_got_allbatches);
 	}
 	
 	function cb_got_batch(e, batch){
