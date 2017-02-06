@@ -450,9 +450,9 @@ var options = 	{
                   options: {quiet: true, tls:false, maxRetry: 5}
 					},
 					chaincode:{
-						zip_url: 'https://github.com/mcenatie/sc-chaincode/archive/master.zip',
+						zip_url: 'https://github.com/richiewg/sc-chaincode/archive/master.zip',
 						unzip_dir: 'sc-chaincode-master',									//subdirectroy name of chaincode after unzipped
-						git_url: 'https://github.com/mcenatie/sc-chaincode',			//GO git http url
+						git_url: 'https://github.com/richiewg/sc-chaincode',			//GO git http url
 					
 						//hashed cc name from prev deployment
 						deployed_name: 'b1477cdf87cb1a510147f515f7192a762837541e4cb1a9a212036e75731c92efa18232fa03db99566d16e68533fd1db750528f4ddac9025f224c9b1b0be91009'
