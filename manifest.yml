@@ -1,8 +1,8 @@
 ---
 applications:
 - disk_quota: 1024M
-  host: mcenatie-sc
-  name: mcenatie-sc
+  host: richiewg-sc
+  name: richiewg-sc
   command: "node app.js"
   path: "."
   instances: 1
